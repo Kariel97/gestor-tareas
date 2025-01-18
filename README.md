@@ -39,12 +39,14 @@ Este es un proyecto de API RESTful para gestionar tareas, donde los usuarios pue
 
    ```bash
    git clone https://github.com/Kariel97/gestor-tareas.git
+   cd gestor-tareas
+   
    
 2. **Crea un entorno virtual**:
 
    ```bash
     python -m venv venv
-    source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
+    source venv/Scripts/activate  # En Windows usa `venv\Scripts\activate`
    
 3. **Instala dependencias**:
 
