@@ -38,7 +38,7 @@ Este es un proyecto de API RESTful para gestionar tareas, donde los usuarios pue
 1. **Clona el repositorio**:
 
    ```bash
-   git clone https://github.com/tu_usuario/gestor-tareas.git
+   git clone https://github.com/Kariel97/gestor-tareas.git
    
 2. **Crea un entorno virtual**:
 
