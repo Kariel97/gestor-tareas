@@ -60,3 +60,99 @@ Este es un proyecto de API RESTful para gestionar tareas, donde los usuarios pue
 
    ```bash
    python manage.py runserver
+   
+# Documentación Swagger
+Para acceder a la documentación interactiva de la API con Swagger, visita: http://127.0.0.1:8000/swagger/
+
+
+# Ejemplo de Peticiones cURL
+
+  **Crear un usuario**:
+  
+    curl -X POST http://127.0.0.1:8000/api/register/ \
+      -H "Content-Type: application/json" \
+      -d '{
+        "username": "testuser",
+        "password": "testpassword",
+        "}
+
+  **Obtener el Token de acceso**:
+  
+    curl -X POST "http://127.0.0.1:8000/api/token/" \
+    -H "Content-Type: application/json" \
+    -d '{"username": "testuser", "password": "testpassword"}'
+    
+  - Respuesta JSON:
+
+        "access": "tu_token_de_acceso",
+        "refresh": "tu_token_de_refresco"
+
+
+
+  **Crear una tarea**:
+  
+    curl -X POST http://127.0.0.1:8000/api/tasks/create/ \
+    -H "Authorization: Bearer <tu_token_de_acceso>" \
+    -d '{"title": "Nueva Tarea", "description": "Descripción de la tarea", "completed": false}' \
+    -H "Content-Type: application/json"
+    
+  - Respuesta JSON:
+      
+        "id": 3,
+        "title": "Mi nueva tarea",
+        "description": "Descripción de mi nueva tarea",
+        "completed": false
+
+
+  **Listar tareas**:
+  
+    curl -X GET http://127.0.0.1:8000/tasks/ \
+      -H "Authorization: Bearer  <tu_token_de_acceso>"
+
+  - Respuesta JSON:
+      
+        "id": 1,
+        "title": "Tarea listadas",
+        "description": "Mis tareas",
+        "completed": false
+
+
+
+
+
+  **Actualizar una tarea existente**:
+    
+    curl -X PUT http://127.0.0.1:8000/tasks/1/update/ \
+    -H "Authorization: Bearer <tu_token_de_acceso>" \
+    -H "Content-Type: application/json" \
+    -d '{"title": "Tarea 1 actualizada", "completed": true}'
+
+    
+  - Respuesta JSON:
+   
+        "id": 1,
+        "title": "Tarea 1 actualizada",
+        "description": "Descripción de la tarea 1",
+        "completed": true
+    
+
+  **Eliminar una tarea existente**:
+  
+    curl -X DELETE http://127.0.0.1:8000/tasks/1/delete/ \
+      -H "Authorization: Bearer <tu_token_de_acceso>"
+
+    
+  - Respuesta JSON:
+
+        "message": "Tarea eliminada"
+
+
+
+
+
+
+
+
+
+
+
