@@ -63,6 +63,12 @@ Este es un proyecto de API RESTful para gestionar tareas, donde los usuarios pue
    ```bash
    python manage.py runserver
    
+   
+5. **Ver API**:
+
+   ```bash
+   http://127.0.0.1:8000/api/register/
+   
 # Documentación Swagger
 Para acceder a la documentación interactiva de la API con Swagger, visita: http://127.0.0.1:8000/swagger/
 
